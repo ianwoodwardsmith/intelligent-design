@@ -5,13 +5,26 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "setup": "npx tsx scripts/setup.ts"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
+    "framer-motion": "^12.38.0",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^1.16.0",
     "next": "16.2.6",
+    "next-mdx-remote": "^6.0.0",
+    "next-sitemap": "^4.2.3",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "reading-time": "^1.5.0",
+    "rehype-slug": "^6.0.0",
+    "remark-gfm": "^4.0.1",
+    "resend": "^6.12.3",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

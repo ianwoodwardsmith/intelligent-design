@@ -1,0 +1,25 @@
+# [Your Site Name]
+
+> [One sentence: what your product does and who it's for.]
+
+[Your Site Name] helps [target audience] [achieve outcome] by [mechanism].
+
+## Products
+
+- [Product Name]: [One sentence description]
+
+## Key Features
+
+- [Feature 1]
+- [Feature 2]
+- [Feature 3]
+
+## Contact
+
+- Website: https://yoursite.com
+- Email: hello@yoursite.com
+
+## Links
+
+- [Blog](https://yoursite.com/blog)
+- [Contact](https://yoursite.com/contact)

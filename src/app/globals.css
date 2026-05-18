@@ -1,26 +1,159 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ─── Theme Presets ──────────────────────────────────────────────────────────
+   Switch between dark and light by running: npm run setup
+   Then choose your preset. Only one @theme block should be active at a time.
+
+   To manually switch: comment out the active preset and uncomment the other.
+────────────────────────────────────────────────────────────────────────────── */
+
+/* ── Dark preset (default) ─────────────────────────────────────────────────── */
+@theme {
+  /* Backgrounds */
+  --color-bg-primary:   #0D0D0D;
+  --color-bg-secondary: #1A1A1A;
+  --color-bg-card:      #1F1F1F;
+
+  /* Accent — swap this one value to rebrand */
+  --color-accent:       #3B82F6;
+  --color-accent-hover: #2563EB;
+
+  /* Text */
+  --color-text-primary:   #FFFFFF;
+  --color-text-secondary: #A0A0A0;
+
+  /* Border */
+  --color-border: #2A2A2A;
+
+  /* Font variables — set by fonts.ts */
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ── Light preset — swap with dark preset above to activate ─────────────────
+@theme {
+  --color-bg-primary:   #FFFFFF;
+  --color-bg-secondary: #F5F5F5;
+  --color-bg-card:      #FAFAFA;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-accent:       #3B82F6;
+  --color-accent-hover: #2563EB;
+
+  --color-text-primary:   #0D0D0D;
+  --color-text-secondary: #6B7280;
+
+  --color-border: #E5E7EB;
+
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+── */
+
+/* ─── Base Styles ────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Inline text links are underlined for accessibility */
+  p a,
+  li a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* Keyboard focus indicator */
+  *:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 2px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ─── Utilities ──────────────────────────────────────────────────────────── */
+@layer utilities {
+  .bg-dot-pattern {
+    background-image: radial-gradient(circle, var(--color-border) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .glass-card {
+    background: color-mix(in srgb, var(--color-bg-card) 80%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--color-border);
+  }
+
+  /* MDX prose styles */
+  .prose {
+    color: var(--color-text-primary);
+    max-width: 65ch;
+  }
+
+  .prose h1, .prose h2, .prose h3, .prose h4 {
+    color: var(--color-text-primary);
+    font-weight: 700;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+  }
+
+  .prose p, .prose li {
+    color: var(--color-text-secondary);
+    line-height: 1.75;
+    margin-bottom: 1em;
+  }
+
+  .prose a { color: var(--color-accent); }
+
+  .prose code {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.4em;
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+  }
+
+  .prose pre {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    overflow-x: auto;
+    margin: 1.5em 0;
+  }
+
+  .prose pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 0.875em;
+  }
+
+  .prose blockquote {
+    border-left: 3px solid var(--color-accent);
+    padding-left: 1rem;
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin: 1.5em 0;
+  }
+
+  .prose hr {
+    border-color: var(--color-border);
+    margin: 2em 0;
+  }
+}
+
+/* ─── Animations ─────────────────────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
 }

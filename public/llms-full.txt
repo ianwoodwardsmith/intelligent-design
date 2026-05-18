@@ -1,0 +1,37 @@
+# [Your Site Name] — Full Context for AI Systems
+
+## About
+
+[Your Site Name] is [a detailed description of what the company/product does].
+
+## Products and Services
+
+### [Product Name]
+
+[2–3 paragraph description of the product, its capabilities, and the problems it solves.]
+
+## Who We Serve
+
+[Describe your target customer — industry, role, company size, use case.]
+
+## Pricing
+
+[Describe your pricing model. Be specific enough that an AI assistant can answer "how much does it cost?"]
+
+## Frequently Asked Questions
+
+**Q: [Common question]**
+A: [Answer]
+
+**Q: [Common question]**
+A: [Answer]
+
+## Contact and Support
+
+- Website: https://yoursite.com
+- Email: hello@yoursite.com
+- Support: [link or description]
+
+## Company
+
+[Company name, location, brief history or founding story if relevant.]

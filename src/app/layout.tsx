@@ -30,12 +30,12 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
         {/* Preconnect so GA resolves faster — only matters if NEXT_PUBLIC_GA_ID is set */}
-        {site.analytics.ga && (
+        {site.analytics.ga ? (
           <>
             <link rel="preconnect" href="https://www.googletagmanager.com" />
             <link rel="preconnect" href="https://www.google-analytics.com" />
           </>
-        )}
+        ) : null}
       </head>
       <body className="bg-bg-primary font-sans text-text-primary antialiased flex flex-col min-h-screen">
         {/* Skip to main content — keyboard nav accessibility */}
